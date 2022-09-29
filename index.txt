@@ -1,0 +1,16 @@
+Manual testing is time consuming if a new feature is realeased, we have to test all the existing feature and the new feature
+
+three types of tests:
+Unit test: focus is on testing the individual building block of an app such as a class or a function or a component;
+in unit testing, eac unit or building block is testing in isolation, independent of other tests. Run in a very short amount of time and make it very easy to pinpoint failures;
+
+integration test:
+focus is on testing a combination of units and ensuring they work together
+
+
+end to end test:
+focus is on testing the entire app flow and ensuring it works as desgined from start to finsih.
+Involves in a real Ui, a real backend db and services.
+take the longest as they cover the most amount of code.
+
+RTL strikes a balance between unit and E2E test
