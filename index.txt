@@ -2,7 +2,7 @@ Manual testing is time consuming if a new feature is realeased, we have to test 
 
 three types of tests:
 Unit test: focus is on testing the individual building block of an app such as a class or a function or a component;
-in unit testing, eac unit or building block is testing in isolation, independent of other tests. Run in a very short amount of time and make it very easy to pinpoint failures;
+in unit testing, each unit or building block is testing in isolation, independent of other tests. Run in a very short amount of time and make it very easy to pinpoint failures;
 
 integration test:
 focus is on testing a combination of units and ensuring they work together
@@ -14,3 +14,47 @@ Involves in a real Ui, a real backend db and services.
 take the longest as they cover the most amount of code.
 
 RTL strikes a balance between unit and E2E test
+
+RTL creates a virtual DOM for us to test a component
+
+TDD (it is a software developmenmt process where we write test before wrting the software code ) this type of testing is also called as red-green testing
+
+JEst only run the test since the last commit
+
+for grouping test, we use desrcibe block that jest provide it is possible to have mutiple desrcibe inside one desrcibe
+
+code coverge is very important when it comes to CI/Cd pipelines
+
+what not to test;
+1: implementation details;
+2: third party code;
+3: code that is not important from a user-point of view
+;
+
+what to test;
+1: test component renders;
+1: test component renders with props;
+3: test component renders in different states;
+4@ react component react to events
+
+getBy.. class of queries return the matching node for a query and show a descriptive error if no elements match or if more than one match is found
+
+as we know if getByRole finds two node element it will throw an error so when we have input with type text and textarea they both have the role of textbox so rtl will throw an error so in this case we use the second argument of getByRole which is name in this case. when we have headings we used level
+
+getByLabelText:  it will find the node element with the text let's say two elements with the same label text then it will take the second argument of selector which is the key and value we set to any html element to tell RTL that this label text is particularly for this html element
+
+getByPlaceholderText: will search all the elements with the placeholder attribute and find the one which matches
+
+getByDisplayValue will search the elements(elements are input, select ,textarea) with the matching value
+
+getByAltText will search the elements(elements are input, img ,aream or custom html element) with the matching alt value
+
+getByTitle will search the element with the matching title
+
+getByTestId  will search the element with the matching data-testid attribute
+
+order of priority
+getByRole > getByLabelText > getByPlaceholderText > getByText  > getByDisplayValue > getByAltText > getByTitle > getByTestId
+
+
+/// query by mutiple elements
