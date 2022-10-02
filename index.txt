@@ -58,3 +58,22 @@ getByRole > getByLabelText > getByPlaceholderText > getByText  > getByDisplayVal
 
 
 /// query by mutiple elements
+for this use getByAll...
+
+// the first argument to getBy() is not a string it's a textMatch(textMatch can either be a string a regular expression or a function)
+
+queryBy will return the node element or otherwise return null. use for dynamic things.
+queryByAll will return the array of node element or otherwise return empty array. use for dynamic things.
+
+findBy will return the promise which resolve  which an element found which matches the given query;
+the promise is rejected if no element is found or it will found more than 2 elements with a default timout of 1000ms we can change this time by passing a third argument of timeout and give it a value
+
+findByAll will return the prOMISE which resolves to an array of an elements
+
+for debugging use the logRoles from the react testing library and screen.debug()
+
+hooks can be tested with renderHook instead of render if with have some props in our hook the we can give it a value using the second argument to renderHook
+
+code that cause states updates when testing custom hooks, wrap it in the act utility 
+
+for http request use the msw package and for showing https errors see the users file 
